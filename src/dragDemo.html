@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽示例</title>
+    <link rel="stylesheet" href="./assets/bootstrap-3.3.7/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="./assets/html5shiv_3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style>
+        .techPlatform{
+            padding: 20px;
+        }
+        .chart-wrap-h490{
+            height:490px;
+        }
+
+        .chart-wrap-h340{
+            height: 341px;
+        }
+
+        .techPlatform .panel-body{
+            padding: 0 10px;
+        }
+
+        .techPlatform .panel-body .city-info{
+            height: 60px;
+            line-height: 60px;
+        }
+
+        .techPlatform .panel-body .city-info .emphasize{
+            font-size: 18px;
+            margin-right: 8px;
+        }
+        .techPlatform .techIcon{
+            display: inline-block;
+            width: 90px;
+            height: 92px;
+            background-image: url(./images/icon-tech-platform.png);
+            background-repeat: no-repeat;
+            background-size: 277px 90px;
+        }
+
+        .techIcon.icon2{
+            background-position: -94px 0;
+        }
+
+        .techIcon.icon3{
+            background-position: -189px 0;
+        }
+        .techPlatform .tech-small-panel {
+            padding: 45px 0;
+        }
+        .chart-wrap-h440 {
+            height: 440px;
+        }
+    </style>
+</head>
+<body>
+<div class="techPlatform">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default panel-white" id="panel1" draggable="true" ondragstart="drag(event)"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="panel-heading">
+                    我是一个小地图
+                </div>
+                <div class="panel-body map-panel-body">
+                    <div class="city-info text-center">
+                        <span class="blue emphasize" id="map_name">南宁市</span>
+                        申报项目数:<span class="blue emphasize" id="map_total">6391</span>
+                        全区排名:<span class="blue emphasize" id="map_top">1</span>
+                    </div>
+                    <div class="chart-wrap-h490 chart" id="chart-guangxi"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default panel-white tech-small-panel">
+                        <div class="panel-body noPadding">
+                            <div class="row">
+                                <div class="col-md-6 text-right"> <span class="techIcon icon1"></span> </div>
+                                <div class="col-md-6">
+                                    <h2 class="num first">26384</h2>
+                                    <span class="name">科技项目</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default panel-white tech-small-panel">
+                        <div class="panel-body noPadding">
+                            <div class="row">
+                                <div class="col-md-6 text-right"> <span class="techIcon icon2"></span> </div>
+                                <div class="col-md-6">
+                                    <h2 class="num second"> 26384</h2>
+                                    <span class="name">科技单位</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default panel-white tech-small-panel">
+                        <div class="panel-body noPadding">
+                            <div class="row">
+                                <div class="col-md-6 text-right"><span class="techIcon icon3"></span> </div>
+                                <div class="col-md-6 text-left">
+                                    <h2 class="num third">26384</h2>
+                                    <span class="name">科技工作者</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default panel-white" id="panel2" draggable="true" ondragstart="drag(event)"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div class="panel-heading">
+                            各处室科技数据统计
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart-wrap-h340 chart" id="chart-nine-card"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default panel-white" id="panel3" draggable="true" ondragstart="drag(event)"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <div class="panel-heading">
+                            五大类科技项目申报分布
+                        </div>
+                        <div class="panel-body">
+                            <div class="chart-wrap-h340 chart" id="card2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default panel-white" id="panel4" draggable="true" ondragstart="drag(event)"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="panel-heading">
+                    九张名片互联网数据在库量
+                </div>
+                <div class="panel-body">
+                    <div class="chart-wrap-h440 chart" id="card3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default panel-white" id="panel5" draggable="true" ondragstart="drag(event)"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="panel-heading">
+                    科技成果产出统计
+                </div>
+                <div class="panel-body">
+                    <div class="chart-wrap-h440 chart" id="card4"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default panel-white" id="panel6" draggable="true" ondragstart="drag(event)"  ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="panel-heading">
+                    热点行业互联网数据在库量
+                </div>
+                <div class="panel-body">
+                    <div class="chart-wrap-h440 chart" id="hot_page">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./assets/jQuery/jquery.min.js"></script>
+<script src="./assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="./assets/echarts/echarts-all-3.js"></script>
+<script src="./assets/echarts/customed.js"></script>
+<script src="./dragDemo.js"></script>
+</body>
+</html>
